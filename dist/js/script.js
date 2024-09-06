@@ -40,5 +40,26 @@ document.addEventListener('DOMContentLoaded', function() {
     window.addEventListener('resize', carouselThree);
     carouselThree();
 
+    //Modal
+
+    const modal = document.getElementById('myModal');
+    const openModalBtn = document.getElementById('openModalBtn');
+    const closeBtn = document.querySelector('.close-btn-two');
+
+    openModalBtn.addEventListener('click', () => {
+        modal.classList.add('showTwo');
+        body.classList.add('body-no-scroll');
+    });
+    closeBtn.addEventListener('click', () => {
+        modal.classList.remove('showTwo');
+        body.classList.remove('body-no-scroll');
+    });
+    window.addEventListener('click', (event) => {
+        if (event.target === modal) {
+            modal.classList.remove('showTwo');
+            body.classList.remove('body-no-scroll');
+        }
+    });
+
     
 });
