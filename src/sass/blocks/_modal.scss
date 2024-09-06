@@ -3,6 +3,13 @@
     background-color: green;
 }
 
+#openModalBtn {
+    margin: 50px;    
+}
+
+.button_three {
+    border: 5px solid black;
+}
 
 .modalTwo {
     display: none; 
@@ -17,25 +24,22 @@
     align-items: center;
     transition: opacity 0.3s ease;
   }
-  
-  /* Стили контента внутри модального окна */
+   
   .modal-two-content {
-    background-color: white;
+    background-color: green;
     padding: 20px;
     border-radius: 5px;
     width: 80%;
     max-width: 500px;
     text-align: center;
   }
-  
-  /* Кнопка закрытия (крестик) */
+   
   .close-btn-two {
     float: right;
     font-size: 24px;
     cursor: pointer;
-  }
-  
-  /* При открытии модального окна */
+  }  
+ 
   .modalTwo.showTwo {
     display: flex;
     opacity: 1;

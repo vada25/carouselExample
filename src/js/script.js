@@ -61,5 +61,30 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
+
+
+    //Timer
+
+    const countdownDate = new Date('Dec 31, 2024 23:59:59').getTime();
+
+    const countdownFunction = setInterval(() => {
+        const now = new Date().getTime();
+        const timerLeft = countdownDate - now;
+        const days = Math.floor(timerLeft / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((timerLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((timerLeft % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((timerLeft % (1000 * 60)) / 1000);
+
+        document.getElementById('days').innerHTML = days;
+        document.getElementById('hours').innerHTML = hours;
+        document.getElementById('minutes').innerHTML = minutes;
+        document.getElementById('seconds').innerHTML = seconds;
+
+        if (timerLeft < 0) {
+            clearInterval(countdownFunction);
+            document.getElementById('countdown').innerHTML = 'Time is out!';
+        }
+    }, 1000);
+
     
 });
