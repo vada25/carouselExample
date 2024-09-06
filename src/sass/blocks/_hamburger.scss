@@ -1,0 +1,95 @@
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #1e1857;
+    padding: 10px 20px;
+  }
+  
+  .logo {
+    color: white;
+    font-size: 1.5rem;
+  }
+  
+  .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    & li a {
+        color: white;
+        text-decoration: none;
+        font-size: 1.2rem;
+    }
+  }
+    
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    & span {
+        width: 25px;
+        height: 3px;
+        background: white;
+        margin: 4px;
+        transition: 0.5s;
+    }
+  }
+  
+  @media (max-width: 992px) {
+    .hamburger {
+      display: flex;
+    }
+  
+    .nav-links {
+      position: absolute;
+      top: 60px;
+      left: 0;
+      background-color: #11066e;
+      height: 100vh;
+      width: 50%;
+      flex-direction: column;
+      align-items: center;
+      transform: translateX(-110%);
+      transition: transform 0.5s ease-in-out;
+      z-index: 2;
+      & li {
+        margin: 20px 0;
+      }
+    }
+    
+    .nav-links.open {
+      transform: translateX(0%);
+    }
+  }
+  
+
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease;
+    z-index: 1;
+  }
+  
+ 
+  .overlay.active {
+    opacity: 1;
+    visibility: visible;
+  }
+  
+  .navbar {
+    z-index: 3;
+  }
+
+  .body-no-scroll {
+    overflow: hidden;
+  }
+  
+ 
+  
